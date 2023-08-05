@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+
+    <!-- Manual CSS-->
+    <link href="./main.css" rel="stylesheet">
+
+    <!-- Jquery Header-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <title>學生會權益申訴表單管理頁面</title>
+
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="row">
+                <div class="alert alert-primary" role="alert" style="margin-top: 1rem; margin-down-1rem">
+                    <img src="./ncuesa_img.png" alt="NCUESA_IMG" class="center">
+                    <h1 class="name_cn" style="text-align: center;">學生權益申訴表單 管理頁面</h1>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Function Select -->
+    <div class="container">
+        <form id="appeal_form" class="alert alert-light" method="post" action="?">
+            <div class="row">
+                <h4 class="col" style="text-align: center;font-weight: bold;">過濾搜尋功能</h4>
+            </div>
+            <div class="row" style="margin: 1rem;">
+                <div class="col-sm-12">
+                    <div class="h-100 p-2 bg-light border rounded-3">
+                        <h5 style="text-align: center;font-weight: bold;">注意事項</h5>
+                        <p style="text-align: center;">過濾內容越多，代表條件越複雜，搜尋結果只會越少</p>
+                        <p style="text-align: center;">若想查詢多筆資料，請分多次查詢</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label class="form-label">以案號搜尋</label>
+                    <input type="text" class="form-control" placeholder="" id="apartment">
+                </div>
+                <div class="col-sm-3">
+                    <label class="form-label">以成案日期搜尋</label>
+                    <input type="date" class="form-control" placeholder="" id="apartment">
+                </div>
+                <div class="col-sm-3">
+                    <label class="form-label">以受理狀態搜尋</label>
+                    <select class="form-select form-select mb-3" id="event_type">
+                        <option selected value="unselect">請選取狀態</option>
+                        <option value="school">未受理</option>
+                        <option value="teach">需追蹤</option>
+                        <option value="club">處理中</option>
+                        <option value="domitory">已結案</option>
+                        <option value="hardware">不受理</option>
+                        <option value="sa">不清楚</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <label class="form-label">以事件類別搜尋</label>
+                    <select class="form-select form-select mb-3" id="event_type">
+                        <option selected value="unselect">請選取事項</option>
+                        <option value="school">學校行政</option>
+                        <option value="teach">教學事務</option>
+                        <option value="club">社團事務</option>
+                        <option value="domitory">宿舍問題</option>
+                        <option value="hardware">校內設備</option>
+                        <option value="sa">學生會活動 (報名活動請至專用報名網站)</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label class="form-label">以案件內容關鍵字搜尋</label>
+                    <input type="text" class="form-control" placeholder="請打關鍵字" id="apartment">
+                </div>
+                <div class="col-sm-3">
+                    <label class="form-label"></label>
+                    <button class="btn btn-danger form-control" type="reset">清除重填</button>
+                </div>
+                <div class="col-sm-3">
+                    <label class="form-label"></label>
+                    <button class="btn btn-primary form-control" type="submit">送出查詢</button>
+                </div>
+            </div>
+
+            
+
+        </form>
+
+    </div>
+
+
+    <!-- Appeal Form -->
+    <div class="container " id="">
+        <table class="table">
+            <thead>
+                <th>案號</th>
+                <th>成案日期</th>
+                <th>案件狀態</th>
+                <th>結案日期</th>
+                <th>承辦人</th>
+                <th>事件類別</th>
+                <th>系級或單位</th>
+                <th>填表人姓名</th>
+                <th>填表人學號</th>
+                <th>電子信箱</th>
+                <th>詳情</th>
+            </thead>
+            <tbody>
+                <tr class="table-danger">
+                    <td>1</td>
+                    <td>2023-08-01</td>
+                    <td class="">尚未受理</td>
+                    <td>0000-00-00</td>
+                    <td></td>
+                    <td>學生會活動</td>
+                    <td>薛生慧</td>
+                    <td>薛生慧</td>
+                    <td>S0123456</td>
+                    <td>ncuesa@gmail.com</td>
+                    <td><button type="button" class="btn btn-outline-info">查看詳情</button></td>
+                </tr>
+                <tr class="table-warning">
+                    <td>2</td>
+                    <td>2023-08-01</td>
+                    <td class="">需追蹤</td>
+                    <td>2023-08-08</td>
+                    <td>機器人</td>
+                    <td>其他</td>
+                    <td>薛生慧</td>
+                    <td>薛生慧</td>
+                    <td>S0123456</td>
+                    <td>ncuesa@gmail.com</td>
+                    <td><button type="button" class="btn btn-outline-info">查看詳情</button></td>
+                </tr>
+                <tr class="table-info">
+                    <td>3</td>
+                    <td>2023-08-01</td>
+                    <td class="">處理中</td>
+                    <td>2023-08-08</td>
+                    <td>機器人</td>
+                    <td>其他</td>
+                    <td>薛生慧</td>
+                    <td>薛生慧</td>
+                    <td>S0123456</td>
+                    <td>ncuesa@gmail.com</td>
+                    <td><button type="button" class="btn btn-outline-info">查看詳情</button></td>
+                </tr>
+                <tr class="table-success">
+                    <td>4</td>
+                    <td>2023-08-01</td>
+                    <td class="">已結案</td>
+                    <td>2023-08-08</td>
+                    <td>機器人</td>
+                    <td>其他</td>
+                    <td>薛生慧</td>
+                    <td>薛生慧</td>
+                    <td>S0123456</td>
+                    <td>ncuesa@gmail.com</td>
+                    <td><button type="button" class="btn btn-outline-info">查看詳情</button></td>
+                </tr>
+                <tr class="table-secondary">
+                    <td>5</td>
+                    <td>2023-08-01</td>
+                    <td class="">不受理</td>
+                    <td>2023-08-08</td>
+                    <td>機器人</td>
+                    <td>其他</td>
+                    <td>薛生慧</td>
+                    <td>薛生慧</td>
+                    <td>S0123456</td>
+                    <td>ncuesa@gmail.com</td>
+                    <td><button type="button" class="btn btn-outline-info">查看詳情</button></td>
+                </tr>
+                <tr class="table-light">
+                    <td>6</td>
+                    <td>2023-08-01</td>
+                    <td class="">不清楚</td>
+                    <td>2023-08-08</td>
+                    <td>機器人</td>
+                    <td>其他</td>
+                    <td>薛生慧</td>
+                    <td>薛生慧</td>
+                    <td>S0123456</td>
+                    <td>ncuesa@gmail.com</td>
+                    <td><button type="button" class="btn btn-outline-info">查看詳情</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h6 style="text-align: center;">CopyRight NCUESA 2023</h6>
+    <hr>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <!-- Captcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+    </script>
+    <!-- Manual JavaScript -->
+    <script src="./helpme.js"></script>
+    <script type="text/javascript">
+        var onloadCallback = function () {
+            //alert("grecaptcha is ready!");
+        };
+    </script>
+
+</body>
+
+</html>

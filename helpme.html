@@ -15,28 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
 
-    <!-- Manual CSS-->    
-    <style>
-        @import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
-
-        .name_cn {
-            font-family: "cwTeXFangSong", serif;
-        }
-        .name_en{
-            font-family: 'Raleway', sans-serif;
-        }
-
-        .center {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
+    <!-- Manual CSS-->
+    <link href="./main.css" rel="stylesheet">
 
     <!-- Jquery Header-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -49,7 +29,7 @@
     <nav>
         <div class="container">
             <div class="row">
-                <div class="alert alert-primary" role="alert" style="margin-top: 1rem; margin-down-1rem">
+                <div class="alert alert-primary" role="alert" style="margin-top: 1rem; margin-down-1rem;">
                     <img src="./ncuesa_img.png" alt="NCUESA_IMG" class="center">
                     <h1 class="name_cn" style="text-align: center;">學生權益申訴表單</h1>
                     <h3 class="name_en" style="text-align: center;">Student Rights Grievance Form</h3>
@@ -111,7 +91,7 @@
             </div>
 
             <div class="col-sm-4 col-form-label">
-                <label class="form-label">若選取是，結案後會將結果寄送給您</label>
+                <label class="form-label">若選取是，需填寫聯絡方式，結案後會將結果寄送給您</label>
             </div>
 
             <div id="email_fill" class="col-sm-4 hidden">
@@ -180,7 +160,9 @@
 
         </form>
     </div>
-    </div>
+    
+    <h6 style="text-align: center;">CopyRight NCUESA 2023</h6>
+    <hr>
 
     <div class="container hidden" id="progress">
         <div class="row">
