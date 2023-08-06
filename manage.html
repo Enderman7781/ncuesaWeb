@@ -66,12 +66,12 @@
                     <label class="form-label">以受理狀態搜尋</label>
                     <select class="form-select form-select mb-3" id="event_type">
                         <option selected value="unselect">請選取狀態</option>
-                        <option value="school">未受理</option>
-                        <option value="teach">需追蹤</option>
-                        <option value="club">處理中</option>
-                        <option value="domitory">已結案</option>
-                        <option value="hardware">不受理</option>
-                        <option value="sa">不清楚</option>
+                        <option value="no_yet_accept">未受理</option>
+                        <option value="tract">需追蹤</option>
+                        <option value="handling">處理中</option>
+                        <option value="finish">已結案</option>
+                        <option value="reject">不受理</option>
+                        <option value="unclear">不清楚</option>
                     </select>
                 </div>
                 <div class="col-sm-3">
@@ -103,7 +103,7 @@
                 </div>
             </div>
 
-            
+
 
         </form>
 
@@ -203,10 +203,142 @@
                     <td>薛生慧</td>
                     <td>S0123456</td>
                     <td>ncuesa@gmail.com</td>
-                    <td><button type="button" class="btn btn-outline-info">查看詳情</button></td>
+                    <td><button type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">查看詳情</button></td>
                 </tr>
             </tbody>
         </table>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal_title">詳情視窗</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row" style="padding-top: 1rem;">
+                            <hr>
+                            <div class="col-md-2">
+                                <label class="form-label">案號</label>
+                                <input type="text" class="form-control" placeholder="" id="apartment" disabled
+                                    value="1">
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">成案日期</label>
+                                <input type="text" class="form-control" placeholder="" id="apartment" disabled
+                                    value="2023-08-01">
+                            </div>
+                            <div class="col-md-2">
+
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">事件類別</label>
+                                <input type="text" class="form-control" placeholder="" id="apartment" disabled
+                                    value="其他">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">其他敘述欄位</label>
+                                <input type="text" class="form-control" placeholder="" id="apartment" disabled
+                                    value="幹部紛爭">
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 1rem;">
+                            <div class="col-md-3">
+                                <label class="form-label">填表人</label>
+                                <input type="text" class="form-control" placeholder="" id="apartment" disabled
+                                    value="薛生慧">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">系級或單位</label>
+                                <input type="text" class="form-control" placeholder="" id="apartment" disabled
+                                    value="薛生慧">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">填表人學號</label>
+                                <input type="text" class="form-control" placeholder="" id="apartment" disabled
+                                    value="S0123456">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">電子信箱</label>
+                                <input type="text" class="form-control" placeholder="" id="apartment" disabled
+                                    value="ncuesa@gmail.com">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row" style="padding-top: 1rem;">
+                            <div class="col-md-3">
+                                <label class="form-label">事件發生日期</label>
+                                <input type="text" class="form-control" placeholder="" id="apartment" disabled
+                                    value="2023-07-31">
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 1rem;">
+                            <div class="col-md-12">
+                                <label class="form-label">事件詳情</label>
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="" id="floatingTextarea2"
+                                        style="height: 150px" disabled></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <h4 style="font-weight: bold;">承辦填寫區</h4>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="form-label">案件狀態</label>
+                                <select class="form-select form-select mb-3" id="modify_situation">
+                                    <option selected value="unselect">請選取狀態</option>
+                                    <option value="no_yet_accept">未受理</option>
+                                    <option value="tract">需追蹤</option>
+                                    <option value="handling">處理中</option>
+                                    <option value="finish">已結案</option>
+                                    <option value="reject">不受理</option>
+                                    <option value="unclear">不清楚</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">承辦人</label>
+                                <select class="form-select form-select mb-3" id="modify_accept">
+                                    <option selected value="unselect">請選取承辦</option>
+
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">結案日期</label>
+                                <input type="date" class="form-control" placeholder="" id="fin_date">
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="form-label"></label>
+                                <button class="btn btn-success form-control" type="submit">自動Email回函</button>
+                            </div>
+                        </div>
+
+                        <div class="row" style="padding-top: 1rem;">
+                            <div class="col-md-12">
+                                <label class="form-label">回函內容</label>
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="請在這邊詳細填寫" id="reply_textarea"
+                                        style="height: 150px"></textarea>
+                                    <label for="reply_textarea">請在這邊詳細填寫</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉視窗</button>
+                    <button type="button" class="btn btn-primary">儲存變更(不寄送結案信)</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <h6 style="text-align: center;">CopyRight NCUESA 2023</h6>
