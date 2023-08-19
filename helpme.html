@@ -39,28 +39,29 @@
     </nav>
 
     <!-- Function Select -->
-    <!--<div class="container">
+    <div class="container">
         <div class="row">
             <div class="btn-group alert alert-warning" role="group" aria-label="Basic outlined example">
                 <button type="button" class="btn btn-outline-primary btn-block" id="fill_form">填寫申訴表單</button>
                 <button type="button" class="btn btn-outline-primary" id="find_progress">查詢申訴進度</button>
-                <button type="button" class="btn btn-outline-primary">學生救濟</button>
             </div>
         </div>
     </div>
-    -->
+
 
     <!-- Appeal Form -->
     <div class="container " id="form">
 
-        <form id="appeal_form" class="alert alert-light row g-3" method="post" action="?">
+        <form id="appeal_form" class="alert alert-light row g-3 needs-validation" method="post" action="?" novalidate>
             <h4>個人資料填寫</h4>
             <hr>
-
             <div class="col-md-4">
 
                 <label class="form-label">系級或單位</label>
-                <input type="text" class="form-control" placeholder="eg.：學生會 or 王曉明" id="apartment">
+                <input type="text" class="form-control" placeholder="eg.：學生會 or 王曉明" id="apartment" required>
+                <div class="invalid-feedback">
+                    必填
+                </div>
 
             </div>
             <div class="col-sm-4">
@@ -70,7 +71,7 @@
             </div>
 
             <div class="col-sm-4">
-                <label class="form-label">姓名</label>
+                <label class="form-label">姓名 (如不填寫將無法查詢進度 請見諒)</label>
                 <input type="text" class="form-control" id="name" placeholder="希望匿名可以不填或填寫暱稱">
 
             </div>
@@ -96,23 +97,24 @@
 
             <div id="email_fill" class="col-sm-4 hidden">
                 <label class="form-label">電子信箱或其他聯絡方式</label>
-                <input type="" class="form-control" id="email" placeholder="Email或電話號碼">
+                <input type="" class="form-control" id="email" placeholder="Email或電話號碼" required readonly>
+                <div class="invalid-feedback" id="email_validation">
+                    必填
+                </div>
             </div>
             <hr>
             <h4>事件填寫</h4>
             <hr>
             <div class="row align-items-md-stretch">
-
-
                 <div class="col-sm-6">
                     <div>
                         <label class="form-label">事件發生日期 (若無可免填)</label>
-                        <input type="date" class="form-control" id="date" placeholder="Email或電話號碼">
+                        <input type="date" class="form-control" id="occur_date" placeholder="">
                     </div>
                     <div>
                         <label class="form-label">事件類別</label>
-                        <select class="form-select form-select mb-3" id="event_type">
-                            <option selected value="unselect">請選取事項</option>
+                        <select class="form-select form-select mb-3" id="event_type" required>
+                            <option selected disabled value="">請選取事項</option>
                             <option value="school">學校行政</option>
                             <option value="teach">教學事務</option>
                             <option value="club">社團事務</option>
@@ -121,11 +123,17 @@
                             <option value="sa">學生會活動 (報名活動請至專用報名網站)</option>
                             <option value="other">其他</option>
                         </select>
+                        <div class="invalid-feedback">
+                            必選
+                        </div>
                     </div>
 
                     <div class="hidden" id="other_event">
                         <label class="form-label">其他事件</label>
-                        <input type="" class="form-control" id="inputPassword" placeholder="請填寫其他事件">
+                        <input type="text" class="form-control" id="other_input" placeholder="請填寫其他事件">
+                        <div class="invalid-feedback" id="other_validation">
+                            必填
+                        </div>
                     </div>
                 </div>
 
@@ -146,38 +154,55 @@
                 <label class="form-label">事件詳情 (事情描述越詳細越好)</label>
                 <div class="form-floating">
                     <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                        style="height: 100px"></textarea>
+                        style="height: 100px" required></textarea>
+                    <div class="invalid-feedback">
+                        必填
+                    </div>
                     <label for="floatingTextarea2">請在這邊詳細填寫</label>
+
                 </div>
             </div>
             <hr>
             <div class="col-sm-12">
                 <div class="g-recaptcha" data-sitekey="your_site_key"></div>
                 <button class="btn btn-danger" type="reset">清除重填</button>
-                <button class="btn btn-primary" type="submit">送出表單</button>
+                <button class="btn btn-primary" type="submit" id="send_form">送出表單</button>
             </div>
             <hr>
 
         </form>
     </div>
-    
-    <h6 style="text-align: center;">CopyRight NCUESA 2023</h6>
-    <hr>
 
+    <!--Finding Form-->
     <div class="container hidden" id="progress">
-        <div class="row">
-            <div class="alert alert-dark">
 
+        <form id="appeal_form" class="alert alert-light row g-3 needs-validation" method="post" action="?" novalidate>
+            <h4>進度查詢</h4>
+            <hr>
+            <div class="col-md-6">
+                <label class="form-label">請填寫案號</label>
+                <input type="text" class="form-control" placeholder="" id="event_num" required>
 
             </div>
-        </div>
+            <div class="col-sm-6">
+                <label class="form-label">請填寫填表時之姓名</label>
+                <input type="text" class="form-control" id="form_name" placeholder="" required>
+
+            </div>
+
+            <hr>
+            <div class="col-sm-12">
+                <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                <button class="btn btn-danger" type="reset">清除重填</button>
+                <button class="btn btn-primary" type="submit" id="send_find">送出表單</button>
+            </div>
+            <hr>
+
+        </form>
     </div>
 
-
-
-
-
-
+    <h6 style="text-align: center;">CopyRight NCUESA 2023</h6>
+    <hr>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
